@@ -3,6 +3,8 @@ import { HomePage } from './pages/Home.page';
 import { AboutPage } from './pages/About.page';
 import { DashboardPage } from './pages/Dashboard.page';
 import { NothingFoundPage } from './pages/404.page';
+import { LoginPage } from './pages/Login.page';
+import classes from './General.module.css';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
     element: <DashboardPage />,
   },
   {
+    path: '/login',
+    element: <LoginPage />,
+  },
+  {
     path: '*',
     element: <NothingFoundPage />,
   },
@@ -25,7 +31,7 @@ const router = createBrowserRouter([
 
 export function Router() {
   return (
-    <div>
+    <div className={classes.main}>
       <RouterProvider router={router} />
     </div>
   )

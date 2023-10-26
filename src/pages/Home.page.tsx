@@ -1,6 +1,6 @@
 import { Header } from '../components/Headers/DefaultHeader';
 import { HomepageHero } from '../components/Heros/HomepageHero';
-import { MainFeatures } from '../components/Features/MainFeatures';
+import { BestFeatures } from '../components/Features/BestFeatures';
 import { Footer } from '../components/Footers/GlobalFooter';
 
 export function HomePage() {
@@ -8,7 +8,7 @@ export function HomePage() {
     <>
       <Header />
       <HomepageHero />
-      <MainFeatures />
+      <BestFeatures />
       <Footer />
     </>
   );

@@ -2,8 +2,11 @@ import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem, Sta
 import { IconCheck } from '@tabler/icons-react';
 import image from './image.svg';
 import classes from './HeroBullets.module.css';
+import { useNavigate } from "react-router-dom";
 
 export function HomepageHero() {
+    const navigate = useNavigate();
+
     const playKBD = (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <Kbd>⌘</Kbd>
@@ -12,8 +15,12 @@ export function HomepageHero() {
         </div>
     );
 
+    function navigateTo(url: string) {
+        navigate(url);
+    }
+
     return (
-        <Container size="md">
+        <Container size="lg">
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
@@ -47,14 +54,15 @@ export function HomepageHero() {
                     </List>
 
                     <Group mt={30}>
-                        <Button size="md" className={classes.control} rightSection={playKBD}>
+                        <Button size="md" className={classes.control} rightSection={playKBD} onClick={() => navigateTo('/home')}>
                             Play
                         </Button>
-                        <Button variant="default" size="md" className={classes.control}>
+                        <Button variant="default" size="md" className={classes.control} onClick={() => navigateTo('/about')}>
                             About
                         </Button>
                     </Group>
                 </div>
+                <Image src={image} className={classes.image} />
             </div>
         </Container>
     );

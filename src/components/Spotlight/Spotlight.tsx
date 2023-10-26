@@ -1,6 +1,6 @@
 import { rem, Button, Kbd } from '@mantine/core';
 import { Spotlight, SpotlightActionData, SpotlightActionGroupData, spotlight } from '@mantine/spotlight';
-import { IconHome, IconDeviceGamepad, IconSearch, IconAt, IconSettings, IconDeviceGamepad2, IconApps, IconUserHexagon, IconBrush } from '@tabler/icons-react';
+import { IconHome, IconDeviceGamepad, IconSearch, IconAt, IconSettings, IconDeviceGamepad2, IconApps, IconUserHexagon, IconBrush, IconRocket } from '@tabler/icons-react';
 import '@mantine/spotlight/styles.css';
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,13 @@ export function MainSpotlight() {
         {
             group: 'Pages',
             actions: [
+                {
+                    id: 'landing',
+                    label: 'Landing page',
+                    description: 'Where we present the product',
+                    onClick: () => navigateTo('/'),
+                    leftSection: <IconRocket style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+                },
                 {
                     id: 'home',
                     label: 'Home page',
@@ -97,6 +104,10 @@ export function MainSpotlight() {
                 searchProps={{
                     leftSection: <IconSearch style={{ width: rem(20), height: rem(20) }} stroke={1.5} />,
                     placeholder: 'Search...',
+                }}
+                style={{
+                    position: 'fixed',
+                    zIndex: 999999,
                 }}
             />
         </>

@@ -10,7 +10,10 @@ export function GlobalDrawer() {
 
     return (
         <>
-            <Drawer opened={opened} onClose={close} position="right" title="Menu" scrollAreaComponent={ScrollArea.Autosize}>
+            <Drawer opened={opened} onClose={close} position="right" title="Menu" scrollAreaComponent={ScrollArea.Autosize} style={{
+                position: 'fixed',
+                zIndex: 999998,
+            }}>
                 <Group hiddenFrom="sm" style={{ 'padding-bottom': '1rem' }} >
                     <DashboardSpotlightStarterButton />
                 </Group>

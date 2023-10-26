@@ -6,22 +6,22 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { nprogress, NavigationProgress } from '@mantine/nprogress';
 import '@mantine/nprogress/styles.css';
 
-const voidOrange: MantineColorsTuple = [
-  '#fff4e2',
-  '#ffe7cc',
-  '#ffcf9b',
-  '#ffb464',
-  '#fe9d38',
-  '#fe8f1b',
-  '#ff8809',
-  '#e47500',
-  '#cb6700',
-  '#b05700'
+const myColor: MantineColorsTuple = [
+  '#ffeee4',
+  '#ffded0',
+  '#f8baa2',
+  '#f29671',
+  '#ed7647',
+  '#ea612d',
+  '#ea561e',
+  '#d04711',
+  '#bb3d0c',
+  '#a33204'
 ];
 
 const theme = createTheme({
   colors: {
-    voidOrange,
+    myColor,
   }
 });
 
@@ -41,7 +41,23 @@ export default function App() {
   }, [prevLoc])
   
   return (
-    <MantineProvider theme={theme} defaultColorScheme="auto">
+    <MantineProvider theme={{
+      primaryColor: 'orange',
+      colors: {
+        'orange': [
+          '#ffeee4',
+          '#ffded0',
+          '#f8baa2',
+          '#f29671',
+          '#ed7647',
+          '#ea612d',
+          '#ea561e',
+          '#d04711',
+          '#bb3d0c',
+          '#a33204'
+        ],
+      },
+    }}>
       <NavigationProgress />
       <Router />
     </MantineProvider>
