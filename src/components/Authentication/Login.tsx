@@ -21,6 +21,7 @@ import { GoogleButton } from './GoogleButton';
 import { TwitterButton } from './TwitterButton';
 import classes from './AuthenticationImage.module.css';
 import { IconArrowBackUp } from '@tabler/icons-react';
+import { SpotlightStarterButton } from '../Spotlight/Spotlight';
 
 export function LoginForm() {
     const queryParams = new URLSearchParams(window.location.search)
@@ -121,12 +122,15 @@ export function LoginForm() {
                     </Group>
                 </form>
                 <Affix position={{ bottom: 20, left: 20 }}>
-                    <Button
-                        leftSection={<IconArrowBackUp style={{ width: rem(16), height: rem(16) }} />}
-                        onClick={() => goBack()}
-                    >
-                        Go back
-                    </Button>
+                    <Group>
+                        <Button
+                            leftSection={<IconArrowBackUp style={{ width: rem(16), height: rem(16) }} />}
+                            onClick={() => goBack()}
+                        >
+                            Go back
+                        </Button>
+                        <SpotlightStarterButton />
+                    </Group>
                 </Affix>
             </Paper>
         </div>

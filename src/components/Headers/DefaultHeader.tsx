@@ -223,8 +223,8 @@ export function Header() {
                     <Divider my="sm" />
 
                     <Group justify="center" grow pb="xl" px="md">
-                        <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
+                        <Button variant="default" onClick={() => navigateTo('/login')}>Log in</Button>
+                        <Button onClick={() => navigateTo('/login?ref=register')}>Sign up</Button>
                     </Group>
                 </ScrollArea>
             </Drawer>

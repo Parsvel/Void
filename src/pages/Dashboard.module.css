@@ -1,13 +1,40 @@
 .main {
     padding-top: 60px;
+    height: 100%;
 }
 
 .content {
     width: calc(100% - 330px);
 }
 
+.group {
+    display: flex;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.left_side {
+    width: 80%;
+    margin-right: 1rem;
+}
+
+.right_side {
+    width: 20%;
+    margin-left: 1rem;
+}
+
 @media only screen and (max-width: 992px) {
     .content {
         width: 100%;
+    }
+
+    .left_side {
+        width: 100%;
+        margin-right: none;
+    }
+
+    .right_side {
+        display: none;
+        margin-left: none;
     }
 }

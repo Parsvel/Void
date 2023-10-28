@@ -21,7 +21,7 @@ export function GlobalDrawer() {
                 <DrawerTabs />
             </Drawer>
 
-            <ActionIcon variant="filled" onClick={open} size="lg">
+            <ActionIcon variant="light" onClick={open} size="lg">
                 <IconCategory2 style={{ width: '70%', height: '70%' }} stroke={1.5} />
             </ActionIcon>
         </>

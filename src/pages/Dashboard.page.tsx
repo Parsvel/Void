@@ -1,4 +1,4 @@
-import { Group, Stack } from '@mantine/core';
+import { Group, Stack, SimpleGrid } from '@mantine/core';
 import { Header } from '../components/Headers/DefaultHeader';
 import { Navbar } from '../components/Navbars/DashboardNavigation';
 import { UserStats } from '../components/Stats/UserStats';
@@ -10,14 +10,26 @@ export function DashboardPage() {
     return (
         <div className={classes.main}>
             <Header />
-            <Group style={{ display: 'flex', 'flex-direction': 'row', width: '100%', padding: '0', height: 'calc(100vh - 60px)' }}>
-                <Group visibleFrom="md" style={{ height: 'calc(100vh - 60px)', margin: '0' }}>
+            <Group style={{ display: 'flex', 'flex-direction': 'row', width: '100%', padding: '0', height: '100%' }}>
+                <div visibleFrom="md" style={{ height: '100%', margin: '0' }}>
                     <Navbar />
-                </Group>
+                </div>
                 <div className={classes.content} style={{ height: 'calc(100vh - 60px)', margin: '0' }}>
                     <Stack>
                         <UserStats />
-                        
+                        <div className={classes.group}>
+                            <div className={classes.left_side}>
+                                <SimpleGrid cols={2}>
+                                    <GameCard />
+                                    <GameCard />
+                                    <GameCard />
+                                    <GameCard />
+                                </SimpleGrid>
+                            </div>
+                            <div className={classes.right_side}>
+                                <SideList />
+                            </div>
+                        </div>
                     </Stack>
                 </div>
             </Group >
