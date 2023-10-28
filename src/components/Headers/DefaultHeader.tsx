@@ -43,7 +43,7 @@ export function Header() {
     const pinned = useHeadroom({ fixedAt: 120 });
 
     function navigateTo(url: string) {
-        navigate(url);
+        window.location.href = url;
     }
 
     const mockdata = [
@@ -177,8 +177,8 @@ export function Header() {
 
                     <Group visibleFrom="sm">
                         <SpotlightStarterButton />
-                        <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
+                        <Button variant="default" onClick={() => navigateTo('/login')}>Log in</Button>
+                        <Button onClick={() => navigateTo('/login?ref=register')}>Sign up</Button>
                         <GlobalDrawer />
                     </Group>
 

@@ -1,8 +1,24 @@
-import { Title, Text, Button, Container } from '@mantine/core';
+import { Title, Text, Button, Container, Kbd } from '@mantine/core';
 import { Dots } from './Dots';
 import classes from './HeroText.module.css';
+import { useNavigate } from "react-router-dom";
+import { IconArrowBigDown } from '@tabler/icons-react';
 
 export function AboutHero() {
+    const navigate = useNavigate();
+
+    const playKBD = (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Kbd>⌘</Kbd>
+            <span style={{ margin: '0 5px' }}>+</span>
+            <Kbd>F</Kbd>
+        </div>
+    );
+
+    function navigateTo(url: string) {
+        window.location.href = url;
+    }
+
     return (
         <Container className={classes.wrapper} size={1400}>
             <Dots className={classes.dots} style={{ left: 0, top: 0 }} />
@@ -12,26 +28,28 @@ export function AboutHero() {
 
             <div className={classes.inner}>
                 <Title className={classes.title}>
-                    Automated AI{' '}
+                    The{' '}
                     <Text component="span" className={classes.highlight} inherit>
-                        code reviews
+                        best
                     </Text>{' '}
-                    for any stack
+                    way to{' '}
+                    <Text component="span" className={classes.highlight} inherit>
+                        play
+                    </Text>
                 </Title>
 
                 <Container p={0} size={600}>
                     <Text size="lg" c="dimmed" className={classes.description}>
-                        Build more reliable software with AI companion. AI is also trained to detect lazy
-                        developers who do nothing and just complain on Twitter.
+                        From Parsvel, it’s Void. A online gaming platform built around people who love flash and browser based games.
                     </Text>
                 </Container>
 
                 <div className={classes.controls}>
-                    <Button className={classes.control} size="lg" variant="default" color="gray">
-                        Book a demo
+                    <Button className={classes.control} size="lg" rightSection={playKBD} onClick={() => navigateTo('/home')}>
+                        Play
                     </Button>
-                    <Button className={classes.control} size="lg">
-                        Purchase a license
+                    <Button className={classes.control} size="lg" rightSection={<IconArrowBigDown />} variant="default" color="gray">
+                        Keep Reading
                     </Button>
                 </div>
             </div>

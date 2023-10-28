@@ -7,19 +7,19 @@ const data = [
     {
         title: 'About',
         links: [
-            { label: 'Features', link: '#' },
-            { label: 'Pricing', link: '#' },
-            { label: 'Support', link: '#' },
-            { label: 'Forums', link: '#' },
+            { label: 'Overview', link: '/about' },
+            { label: 'FAQs', link: '/about#faq' },
+            { label: 'Support', link: '/about/support' },
+            { label: 'Forums', link: '/about#social' },
         ],
     },
     {
         title: 'Project',
         links: [
-            { label: 'Contribute', link: '#' },
-            { label: 'Media assets', link: '#' },
-            { label: 'Changelog', link: '#' },
-            { label: 'Releases', link: '#' },
+            { label: 'Parsvel Page', link: 'https://parsvel.com/?page_id=20' },
+            { label: 'Contribute', link: '/about/contribute' },
+            { label: 'Changelog', link: '/development/changelog' },
+            { label: 'Releases', link: '/development/releases' },
         ],
     },
     {
@@ -61,7 +61,7 @@ export function Footer() {
                 <div className={classes.logo}>
                     <Logo />
                     <Text size="xs" c="dimmed" className={classes.description}>
-                        Build fully functional accessible web applications faster than ever
+                        A modern gaming platform for the people.
                     </Text>
                 </div>
                 <div className={classes.groups}>{groups}</div>

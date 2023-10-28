@@ -1,5 +1,5 @@
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem, Stack, Kbd } from '@mantine/core';
-import { IconCheck } from '@tabler/icons-react';
+import { IconCheck, IconBaguette } from '@tabler/icons-react';
 import image from './image.svg';
 import classes from './HeroBullets.module.css';
 import { useNavigate } from "react-router-dom";
@@ -24,11 +24,10 @@ export function HomepageHero() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        A <span className={classes.highlight}>Modern</span> Gaming <br /> Platform
+                        A <span className={classes.highlight}>Faster</span> Gaming <br /> Platform
                     </Title>
                     <Text c="dimmed" mt="md">
-                        Build fully functional accessible web applications faster than ever – Mantine includes
-                        more than 120 customizable components and hooks to cover you in any situation
+                        From Parsvel, it’s Void. A online gaming platform built around people who love flash and browser based games.
                     </Text>
 
                     <List
@@ -57,7 +56,7 @@ export function HomepageHero() {
                         <Button size="md" className={classes.control} rightSection={playKBD} onClick={() => navigateTo('/home')}>
                             Play
                         </Button>
-                        <Button variant="default" size="md" className={classes.control} onClick={() => navigateTo('/about')}>
+                        <Button variant="default" size="md" className={classes.control} rightSection={<IconBaguette />} onClick={() => navigateTo('/about')}>
                             About
                         </Button>
                     </Group>

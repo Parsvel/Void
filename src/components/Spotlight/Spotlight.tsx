@@ -1,6 +1,6 @@
 import { rem, Button, Kbd } from '@mantine/core';
 import { Spotlight, SpotlightActionData, SpotlightActionGroupData, spotlight } from '@mantine/spotlight';
-import { IconHome, IconDeviceGamepad, IconSearch, IconAt, IconSettings, IconDeviceGamepad2, IconApps, IconUserHexagon, IconBrush, IconRocket } from '@tabler/icons-react';
+import { IconHome, IconDeviceGamepad, IconSearch, IconAt, IconSettings, IconDeviceGamepad2, IconApps, IconUserHexagon, IconBrush, IconRocket, IconLogin2, IconUserPlus } from '@tabler/icons-react';
 import '@mantine/spotlight/styles.css';
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ export function MainSpotlight() {
     const navigate = useNavigate();
 
     function navigateTo(url: string) {
-        navigate(url);
+        window.location.href = url;
     }
 
     const actions: (SpotlightActionGroupData | SpotlightActionData)[] = [
@@ -42,6 +42,20 @@ export function MainSpotlight() {
                     description: 'The entire Void game library',
                     onClick: () => navigateTo('/games'),
                     leftSection: <IconDeviceGamepad2 style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+                },
+                {
+                    id: 'login',
+                    label: 'Login page',
+                    description: 'Log into your Void account',
+                    onClick: () => navigateTo('/login'),
+                    leftSection: <IconLogin2 style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+                },
+                {
+                    id: 'register',
+                    label: 'Register page',
+                    description: 'Create an Void account',
+                    onClick: () => navigateTo('/login?ref=register'),
+                    leftSection: <IconUserPlus style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
                 },
                 {
                     id: 'profile',
@@ -105,6 +119,8 @@ export function MainSpotlight() {
                     leftSection: <IconSearch style={{ width: rem(20), height: rem(20) }} stroke={1.5} />,
                     placeholder: 'Search...',
                 }}
+                scrollable
+                maxHeight={550}
                 style={{
                     position: 'fixed',
                     zIndex: 999999,

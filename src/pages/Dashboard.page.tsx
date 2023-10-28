@@ -8,7 +8,7 @@ import { GameCard } from '../components/Cards/GameCard';
 
 export function DashboardPage() {
     return (
-        <>
+        <div className={classes.main}>
             <Header />
             <Group style={{ display: 'flex', 'flex-direction': 'row', width: '100%', padding: '0', height: 'calc(100vh - 60px)' }}>
                 <Group visibleFrom="md" style={{ height: 'calc(100vh - 60px)', margin: '0' }}>
@@ -21,6 +21,6 @@ export function DashboardPage() {
                     </Stack>
                 </div>
             </Group >
-        </>
+        </div>
     );
 }

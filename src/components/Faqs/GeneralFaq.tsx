@@ -7,7 +7,7 @@ const placeholder =
 
 export function GeneralFaq() {
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} id="faq">
             <Container size="lg">
                 <Grid id="faq-grid" gutter={50}>
                     <Grid.Col span={{ base: 12, md: 6 }}>
