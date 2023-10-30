@@ -11,7 +11,7 @@ export function DashboardPage() {
         <div className={classes.main}>
             <Header />
             <Group style={{ display: 'flex', 'flex-direction': 'row', width: '100%', padding: '0', height: '100%' }}>
-                <div visibleFrom="md" style={{ height: '100%', margin: '0' }}>
+                <div style={{ height: '100%', margin: '0' }}>
                     <Navbar />
                 </div>
                 <div className={classes.content} style={{ height: 'calc(100vh - 60px)', margin: '0' }}>
