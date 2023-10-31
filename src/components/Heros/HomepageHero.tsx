@@ -1,6 +1,6 @@
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem, Stack, Kbd } from '@mantine/core';
 import { IconCheck, IconBaguette } from '@tabler/icons-react';
-import image from './image.svg';
+import image from '../../images/undraw_halloween.svg';
 import classes from './HeroBullets.module.css';
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ export function HomepageHero() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        A <span className={classes.highlight}>Faster</span> Gaming <br /> Platform
+                        The <span className={classes.highlight}>Best</span> Way <br /> to Play
                     </Title>
                     <Text c="dimmed" mt="md">
                         From Parsvel, it’s Void. A online gaming platform built around people who love flash and browser based games.
@@ -47,8 +47,7 @@ export function HomepageHero() {
                             <b>Flash Games Support</b> – With the help of the Ruffle Flash emulator, we are able to revive your favorite games.
                         </List.Item>
                         <List.Item>
-                            <b>Good Community</b> – focus ring will appear only when user navigates with
-                            keyboard
+                            <b>Good Community</b> – Great minds think alike, our community is filled with amazing people.
                         </List.Item>
                     </List>
 

@@ -31,7 +31,7 @@ export function UserCard() {
                 activities on and around the fjords of Norway
             </Text>
 
-            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+            <Button variant="light" color="orange" fullWidth mt="md" radius="md">
                 Profile
             </Button>
         </Card>

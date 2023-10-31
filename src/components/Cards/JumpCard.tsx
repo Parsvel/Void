@@ -27,12 +27,12 @@ export function JumpCard() {
     }
 
     const mockdata = [
-        { title: 'Home', icon: IconHome, color: 'violet', onclick: () => navigateTo('/home') },
-        { title: 'Profile', icon: IconUserCircle, color: 'indigo', onclick: () => navigateTo('/me/profile') },
-        { title: 'Notifications', icon: IconBell, color: 'blue', onclick: () => navigateTo('/me/notifications') },
-        { title: 'Library', icon: IconListDetails, color: 'green', onclick: () => navigateTo('/me/libraru') },
-        { title: 'Friends', icon: IconFriends, color: 'teal', onclick: () => navigateTo('/me/friends') },
-        { title: 'Settings', icon: IconSettings, color: 'cyan', onclick: () => navigateTo('/settings') },
+        { title: 'Home', icon: IconHome, color: 'orange', onclick: () => navigateTo('/home') },
+        { title: 'Profile', icon: IconUserCircle, color: 'orange', onclick: () => navigateTo('/me/profile') },
+        { title: 'Notifications', icon: IconBell, color: 'orange', onclick: () => navigateTo('/me/notifications') },
+        { title: 'Library', icon: IconListDetails, color: 'orange', onclick: () => navigateTo('/me/libraru') },
+        { title: 'Friends', icon: IconFriends, color: 'orange', onclick: () => navigateTo('/me/friends') },
+        { title: 'Settings', icon: IconSettings, color: 'orange', onclick: () => navigateTo('/settings') },
     ];
 
     const items = mockdata.map((item) => (
