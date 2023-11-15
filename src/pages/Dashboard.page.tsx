@@ -10,16 +10,16 @@ export function DashboardPage() {
     return (
         <div className={classes.main}>
             <Header />
-            <Group style={{ display: 'flex', 'flex-direction': 'row', width: '100%', padding: '0', height: '100%' }}>
-                <div style={{ height: '100%', margin: '0' }}>
+            <Group style={{ display: 'flex', 'flex-direction': 'row', width: '100%', padding: '0', height: '100%', overflow: 'hidden' }}>
+                <div style={{ height: 'calc(100vh - 60px)', margin: '0' }}>
                     <Navbar />
                 </div>
-                <div className={classes.content} style={{ height: 'calc(100vh - 60px)', margin: '0' }}>
+                <div className={classes.content} style={{ height: 'calc(100vh - 60px)', margin: '0'}}>
                     <Stack>
                         <UserStats />
                         <div className={classes.group}>
                             <div className={classes.left_side}>
-                                <SimpleGrid cols={2}>
+                                <SimpleGrid cols={1}>
                                     <GameCard />
                                     <GameCard />
                                     <GameCard />

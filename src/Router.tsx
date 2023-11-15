@@ -2,8 +2,10 @@ import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-d
 import { HomePage } from './pages/Home.page';
 import { AboutPage } from './pages/About.page';
 import { DashboardPage } from './pages/Dashboard.page';
+import { GamesPage } from './pages/Games.page';
 import { NothingFoundPage } from './pages/404.page';
 import { LoginPage } from './pages/Login.page';
+import { ViewGamePage } from './pages/ViewGame.page';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <DashboardPage />,
+  },
+  {
+    path: '/games',
+    element: <GamesPage />,
+  },
+  {
+    path: '/game/view/*',
+    element: <ViewGamePage />,
   },
   {
     path: '/login',

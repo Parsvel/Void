@@ -74,7 +74,7 @@ export function Navbar() {
                 <div className={classes.mainLinks}>{mainLinks}</div>
             </div>
 
-            <div className={classes.section}>
+            <div className={classes.communitiesSection} >
                 <Group className={classes.communitiesHeader} justify="space-between">
                     <Text size="xs" fw={500} c="dimmed">
                         Communities

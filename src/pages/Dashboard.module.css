@@ -4,21 +4,34 @@
 }
 
 .content {
-    width: calc(100% - 330px);
+    width: calc(100% - 318px);
+    overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
 }
 
 .group {
+    height: 88vh;
     display: flex;
     margin-left: 2rem;
     margin-right: 2rem;
 }
 
 .left_side {
+    height: 100%;
     width: 80%;
     margin-right: 1rem;
+    overflow-y: scroll;
+}
+
+.left_side::-webkit-scrollbar {
+    display: none;
 }
 
 .right_side {
+    position: relative;
     width: 20%;
     margin-left: 1rem;
 }
