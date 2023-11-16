@@ -1,39 +1,46 @@
+import { useEffect, useState } from 'react';
 import { Grid, Skeleton, Container } from '@mantine/core';
+import { Card, Image, Text, Group, Badge, Button } from '@mantine/core';
 import { IconHeart } from '@tabler/icons-react';
-import { Card, Image, Text, Group, Badge, Button, ActionIcon } from '@mantine/core';
 import classes from './BadgeCard.module.css';
-import { useState } from 'react';
-
-async function getGames() {
-    const response = await fetch('https://badcarrot.playvoid.xyz/fetch/all/games', { mode: 'cors' });
-
-    return response.json();
-}
-
-const gameDbFetch = await getGames()
-const gamesList = gameDbFetch.data
 
 const badgeList = [
     { id: 'flash', emoji: '🎮', label: 'Flash' },
-    { id: 'flash', emoji: '🎮', label: 'HTML5' },
+    { id: 'html5', emoji: '🎮', label: 'HTML5' },
     { id: 'puzzle', emoji: '🧩', label: 'Puzzle' },
 ];
 
-const features = badgeList
-
-function createBadgeList (tags: any) {
-    let badges = tags.split(',')
-    let badgesList: any = []
+function createBadgeList(tags: any) {
+    let badges = tags.split(',');
+    let badgesList: any = [];
     badges.forEach((badge: any) => {
-        if (badgeList.some(e => e.id === badge)) {
-            badgesList.push(badgeList.find(vendor => vendor['id'] === badge))
+        if (badgeList.some((e) => e.id === badge)) {
+            badgesList.push(badgeList.find((vendor) => vendor['id'] === badge));
         }
-    })
-    return badgesList
+    });
+    return badgesList;
 }
 
 export function GamesGrid() {
+    const [gamesList, setGamesList] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchGames() {
+            try {
+                const response = await fetch('https://badcarrot.playvoid.xyz/fetch/all/games', {
+                    mode: 'cors',
+                });
+                const gameDbFetch = await response.json();
+                setGamesList(gameDbFetch.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching games:', error);
+            }
+        }
+
+        fetchGames();
+    }, []);
 
     function navigateTo(url: string) {
         window.location.href = url;
@@ -44,10 +51,15 @@ export function GamesGrid() {
             <Grid>
                 <Grid.Col span={{ base: 12, xs: 4 }}>
                     {gamesList.map((game: any) => (
-                        <Card withBorder radius="md" p="md" className={classes.card}>
+                        <Card withBorder radius="md" p="md" className={classes.card} key={game.id}>
                             <Card.Section>
                                 <Skeleton visible={loading}>
-                                    <Image src={'http://localhost:6448/data/gameContent/' + game.id.slice(4) + '/images/CardBanner.png'} alt={'Game Banner'} height={180} onLoad={() => setLoading((l) => !l)} />
+                                    <Image
+                                        src={`https://cdn.playvoid.xyz/data/gameContent/${game.id.slice(4)}/images/CardBanner.png`}
+                                        alt="Game Banner"
+                                        height={180}
+                                        onLoad={() => setLoading((l) => !l)}
+                                    />
                                 </Skeleton>
                             </Card.Section>
 
@@ -73,10 +85,19 @@ export function GamesGrid() {
                             </Card.Section>
 
                             <Group mt="xs">
-                                <Button radius="md" style={{ flex: 1 }} onClick={() => navigateTo('/game/play/'+game.primename)}>
+                                <Button
+                                    radius="md"
+                                    style={{ flex: 1 }}
+                                    onClick={() => navigateTo(`/game/play/${game.primename}`)}
+                                >
                                     Play Now
                                 </Button>
-                                <Button radius="md" variant="default" style={{ flex: 1 }} onClick={() => navigateTo('/game/view/' + game.primename)}>
+                                <Button
+                                    radius="md"
+                                    variant="default"
+                                    style={{ flex: 1 }}
+                                    onClick={() => navigateTo(`/game/view/${game.primename}`)}
+                                >
                                     View
                                 </Button>
                             </Group>

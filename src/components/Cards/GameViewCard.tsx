@@ -65,7 +65,7 @@ export function GameCard(data: any) {
                             <Title order={2}>
                                 {data.data.game.name}
                             </Title>
-                            <Text size="sm">{data.data.game.primename}</Text>
+                            <Text size="sm">{data.data.game.version}</Text>
                         </div>
                         <Tooltip label={'Share Game'} position="right">
                             <ActionIcon variant="default" aria-label="Share" onClick={open}>
@@ -118,7 +118,7 @@ export function GameCard(data: any) {
                 </Card.Section>
 
                 <Group mt="xs">
-                    <Button radius="md" style={{ flex: 1 }}>
+                    <Button radius="md" style={{ flex: 1 }} onClick={() => navigateTo('/game/play/' + data.data.game.primename)}>
                         Play
                     </Button>
                     <ActionIcon variant="default" radius="md" size={36}>
