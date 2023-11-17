@@ -23,7 +23,8 @@ function createBadgeList(tags: any) {
 
 export function GamesGrid() {
     const [gamesList, setGamesList] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [imageLoading, setImageLoading] = useState(true);
+    const [gamesLoading, setGamesLoading] = useState(true);
 
     useEffect(() => {
         async function fetchGames() {
@@ -33,7 +34,7 @@ export function GamesGrid() {
                 });
                 const gameDbFetch = await response.json();
                 setGamesList(gameDbFetch.data);
-                setLoading(false);
+                setGamesLoading(false);
             } catch (error) {
                 console.error('Error fetching games:', error);
             }
@@ -53,12 +54,12 @@ export function GamesGrid() {
                     {gamesList.map((game: any) => (
                         <Card withBorder radius="md" p="md" className={classes.card} key={game.id}>
                             <Card.Section>
-                                <Skeleton visible={loading}>
+                                <Skeleton visible={=imageLoading}>
                                     <Image
                                         src={`https://cdn.playvoid.xyz/data/gameContent/${game.id.slice(4)}/images/CardBanner.png`}
                                         alt="Game Banner"
                                         height={180}
-                                        onLoad={() => setLoading((l) => !l)}
+                                        onLoad={() => setImageLoading((l) => !l)}
                                     />
                                 </Skeleton>
                             </Card.Section>

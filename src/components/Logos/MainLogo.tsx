@@ -1,6 +1,6 @@
 import classes from './Logo.module.css';
 import { Image } from '@mantine/core';
-import image from '../../voidIcon.svg';
+import image from '../../VoidIcon.svg';
 
 export function Logo() {
     return (
