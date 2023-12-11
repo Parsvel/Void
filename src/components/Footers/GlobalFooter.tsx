@@ -9,8 +9,8 @@ const data = [
         links: [
             { label: 'Overview', link: '/about' },
             { label: 'FAQs', link: '/about#faq' },
-            { label: 'Support', link: '/about/support' },
-            { label: 'Forums', link: '/about#social' },
+            { label: 'Support', link: 'https://support.playvoid.xyz/' },
+            { label: 'Forums', link: 'https://support.playvoid.xyz/forums' },
         ],
     },
     {
@@ -68,7 +68,7 @@ export function Footer() {
             </Container>
             <Container className={classes.afterFooter}>
                 <Text c="dimmed" size="sm">
-                    © 2023 Carbon Dev Labs. All rights reserved.
+                    © 2023 Parsvel Labs. All rights reserved.
                 </Text>
 
                 <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

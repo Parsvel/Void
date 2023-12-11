@@ -5,6 +5,7 @@ import { UserStats } from '../components/Stats/UserStats';
 import classes from './Dashboard.module.css';
 import { SideList } from '../components/List/DashboardSideList';
 import { GameCard } from '../components/Cards/GameCard';
+import { Footer } from '../components/Footers/GlobalFooter';
 
 export function DashboardPage() {
     return (

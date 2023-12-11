@@ -54,7 +54,7 @@ export function GamesGrid() {
                     {gamesList.map((game: any) => (
                         <Card withBorder radius="md" p="md" className={classes.card} key={game.id}>
                             <Card.Section>
-                                <Skeleton visible={=imageLoading}>
+                                <Skeleton visible={imageLoading}>
                                     <Image
                                         src={`https://cdn.playvoid.xyz/data/gameContent/${game.id.slice(4)}/images/CardBanner.png`}
                                         alt="Game Banner"

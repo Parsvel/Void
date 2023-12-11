@@ -12,11 +12,11 @@ export function UserCard() {
 
                     <div style={{ flex: 1 }}>
                         <Text size="sm" fw={500}>
-                            WastePanda
+                            Bastard
                         </Text>
 
                         <Text c="dimmed" size="xs">
-                            austinjdub@outlook.com
+                            WastePanda
                         </Text>
                     </div>
                 </Group>

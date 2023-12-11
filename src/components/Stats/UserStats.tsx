@@ -18,8 +18,8 @@ const icons = {
 
 const data = [
     { title: 'Play Points', icon: 'circle', value: '13,456', diff: 34 },
-    { title: 'Achievements', icon: 'badge', value: '145', diff: 13 },
-    { title: 'Games Discovered', icon: 'controller', value: '745', diff: 18 },
+    { title: 'Achievements', icon: 'badge', value: '52', diff: 4 },
+    { title: 'Games Discovered', icon: 'controller', value: '20', diff: 18 },
 ] as const;
 
 export function UserStats() {

@@ -55,7 +55,7 @@ export function LoginForm() {
         <div className={classes.wrapper}>
             <Paper className={classes.form} radius={0} p={30}>
                 <Title order={2} className={classes.title} ta="center" mt="md" mb={20}>
-                    Welcome back to Void!
+                    Welcome to Void!
                 </Title>
                 <Text fw={500} ta="center">
                     Continue with

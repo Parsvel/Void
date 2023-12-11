@@ -1,6 +1,6 @@
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem, Stack, Kbd } from '@mantine/core';
 import { IconCheck, IconBaguette } from '@tabler/icons-react';
-import image from '../../images/undraw_halloween.svg';
+import image from '../../VoidIcon.svg';
 import classes from './HeroBullets.module.css';
 import { useNavigate } from "react-router-dom";
 

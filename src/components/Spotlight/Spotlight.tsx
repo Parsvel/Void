@@ -85,10 +85,10 @@ export function MainSpotlight() {
             group: 'Games',
             actions: [
                 {
-                    id: 'super-mario',
-                    label: 'Super Mario',
-                    description: 'The classic Super Mario Flash game',
-                    onClick: () => navigateTo('/games/view/super-mario'),
+                    id: 'plumber',
+                    label: 'Plumber',
+                    description: 'The classic Plumber mini game.',
+                    onClick: () => navigateTo('/game/view/plumber'),
                     leftSection: <IconDeviceGamepad style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
                 },
             ],

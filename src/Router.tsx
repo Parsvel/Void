@@ -6,6 +6,7 @@ import { GamesPage } from './pages/Games.page';
 import { NothingFoundPage } from './pages/404.page';
 import { LoginPage } from './pages/Login.page';
 import { ViewGamePage } from './pages/ViewGame.page';
+import { PlayGamePage } from './pages/PlayGame.page';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/game/view/*',
     element: <ViewGamePage />,
+  },
+  {
+    path: '/game/play/*',
+    element: <PlayGamePage />,
   },
   {
     path: '/login',
