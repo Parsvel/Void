@@ -16,21 +16,16 @@
 }
 
 .title {
-    background-color: red;
-    background-image: linear-gradient(45deg, #5a5a66, #ff7f11);
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    font-family: Greycliff CF, var(--mantine-font-family);
-    font-size: rem(100px);
-    line-height: 1.2;
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-family:
+        Greycliff CF,
+        var(--mantine-font-family);
+    font-size: rem(34px);
+    line-height: 0;
     font-weight: 900;
 
     @media (max-width: $mantine-breakpoint-xs) {
-        font-size: rem(70px);
+        font-size: rem(28px);
     }
 }
 
@@ -50,8 +45,20 @@
 }
 
 .highlight {
-    position: relative;
-    background-color: var(--mantine-color-orange-light);
-    border-radius: var(--mantine-radius-sm);
-    padding: rem(4px) rem(12px);
+    background-color: red;
+    background-image: linear-gradient(45deg, #5a5a66, #ff7f11);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-family: Greycliff CF, var(--mantine-font-family);
+    font-size: rem(100px);
+    line-height: 1.2;
+    font-weight: 900;
+
+    @media (max-width: $mantine-breakpoint-xs) {
+        font-size: rem(70px);
+    }
 }

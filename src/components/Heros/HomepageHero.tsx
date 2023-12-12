@@ -24,7 +24,7 @@ export function HomepageHero() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        experience
+                        dive into the  <br /> <span className={classes.highlight}>experience</span>
                     </Title>
                     <Text c="dimmed" mt="md">
                         From Parsvel, it’s Void. A online gaming platform built around people who love flash and browser based games.
@@ -52,7 +52,7 @@ export function HomepageHero() {
                     </List>
 
                     <Group mt={30}>
-                        <Button size="md" className={classes.control} rightSection={playKBD} onClick={() => navigateTo('/home')}>
+                        <Button size="md" className={classes.control} rightSection={playKBD} onClick={() => navigateTo('/games')}>
                             Play
                         </Button>
                         <Button variant="default" size="md" className={classes.control} rightSection={<IconBaguette />} onClick={() => navigateTo('/about')}>
