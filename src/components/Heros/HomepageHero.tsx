@@ -1,6 +1,6 @@
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem, Stack, Kbd } from '@mantine/core';
 import { IconCheck, IconBaguette } from '@tabler/icons-react';
-import image from '../../VoidIcon.svg';
+import image from '../../Images/Icons/VoidRunningMan.svg';
 import classes from './HeroBullets.module.css';
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ export function HomepageHero() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        The <span className={classes.highlight}>Best</span> Way <br /> to Play
+                        modernize
                     </Title>
                     <Text c="dimmed" mt="md">
                         From Parsvel, it’s Void. A online gaming platform built around people who love flash and browser based games.

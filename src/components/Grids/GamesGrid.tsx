@@ -29,7 +29,7 @@ export function GamesGrid() {
     useEffect(() => {
         async function fetchGames() {
             try {
-                const response = await fetch('https://badcarrot.playvoid.xyz/fetch/all/games', {
+                const response = await fetch('https://api.playvoid.xyz/fetch/all/games', {
                     mode: 'cors',
                 });
                 const gameDbFetch = await response.json();

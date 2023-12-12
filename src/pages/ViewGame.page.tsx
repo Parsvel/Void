@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Headers/DefaultHeader';
 import { Footer } from '../components/Footers/GlobalFooter';
 import { GeneralAffix } from '../components/Affix/Affix';
-import classes from '../General.module.css';
-import { Group } from '@mantine/core';
+import classes from './GamePage.module.css';
+import { Group, Card, Image, Text } from '@mantine/core';
 import { GameCard } from '../components/Cards/GameViewCard';
 import { GameCardSkeleton } from '../components/Skeletons/GameCard';
+import { BannerCard } from '../components/Cards/GameViewBannerCard';
 
 export function ViewGamePage() {
     const [allData, setAllData] = useState({ game: null, studio: null });
@@ -17,14 +18,14 @@ export function ViewGamePage() {
 
             if (window.location.pathname.startsWith('/game/view')) {
                 const gameResponse = await fetch(
-                    'https://badcarrot.playvoid.xyz/fetch/details/gamefromname?id=' + gameId,
+                    'https://api.playvoid.xyz/fetch/details/gamefromname?id=' + gameId,
                     { mode: 'cors' }
                 );
                 const gameData = await gameResponse.json();
 
                 if (gameData.data) {
                     const studioResponse = await fetch(
-                        'https://badcarrot.playvoid.xyz/fetch/details/studio?id=' + gameData.data.studioid,
+                        'https://api.playvoid.xyz/fetch/details/studio?id=' + gameData.data.studioid,
                         { mode: 'cors' }
                     );
                     const studioData = await studioResponse.json();
@@ -59,12 +60,15 @@ export function ViewGamePage() {
         <div className={classes.main}>
             <Header />
             <GeneralAffix />
-            <Group>
-                <div style={{ margin: '1.5rem', width: '25%' }}>
+            <div className={classes.group}>
+                <div className={classes.left_side}>
+                    <BannerCard data={allData} />
                     <GameCard data={allData} />
                 </div>
-            </Group>
-            <Footer />
+                <div className={classes.right_side}>
+                    
+                </div>
+            </div>
         </div>
     );
 }

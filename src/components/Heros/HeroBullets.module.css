@@ -16,9 +16,16 @@
 }
 
 .title {
-    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    background-color: red;
+    background-image: linear-gradient(45deg, #5a5a66, #ff7f11);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
     font-family: Greycliff CF, var(--mantine-font-family);
-    font-size: rem(44px);
+    font-size: rem(100px);
     line-height: 1.2;
     font-weight: 900;
 

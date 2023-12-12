@@ -53,20 +53,18 @@ export function GameCard(data: any) {
         <>
             <ShareModal />
             <Card withBorder radius="md" p="md" className={classes.card}>
-                <Card.Section>
-                    <Skeleton visible={imageLoading}>
-                        <Image src={'https://cdn.playvoid.xyz/data/gameContent/' + data.data.game.id.slice(4) + '/images/CardBanner.png'} alt={'Game Banner'} height={180} onLoad={() => setImageLoading((l) => !l)} />
-                    </Skeleton>
-                </Card.Section>
 
-                <Card.Section className={classes.section} mt="md">
-                    <Group justify="space-between">
-                        <div>
-                            <Title order={2}>
-                                {data.data.game.name}
-                            </Title>
-                            <Text size="sm">{data.data.game.version}</Text>
-                        </div>
+                <Card.Section className={classes.section}>
+                    <Group justify="space-between" mt="xs">
+                        <Group>
+                            <Avatar variant="filled" radius="sm" src={'https://cdn.playvoid.xyz/data/gameContent/' + data.data.game.id.slice(4) + '/images/PrimaryIcon.png'} />
+                            <div>
+                                <Title order={2}>
+                                    {data.data.game.name}
+                                </Title>
+                                <Text size="sm">{data.data.game.version}</Text>
+                            </div>
+                        </Group>
                         <Tooltip label={'Share Game'} position="right">
                             <ActionIcon variant="default" aria-label="Share" onClick={open}>
                                 <IconShare2 style={{ width: '70%', height: '70%' }} stroke={1.5} />

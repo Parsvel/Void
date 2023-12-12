@@ -20,14 +20,14 @@ export function PlayGamePage() {
 
             if (window.location.pathname.startsWith('/game/play')) {
                 const gameResponse = await fetch(
-                    'https://badcarrot.playvoid.xyz/fetch/details/gamefromname?id=' + gameId,
+                    'https://api.playvoid.xyz/fetch/details/gamefromname?id=' + gameId,
                     { mode: 'cors' }
                 );
                 const gameData = await gameResponse.json();
 
                 if (gameData.data) {
                     const studioResponse = await fetch(
-                        'https://badcarrot.playvoid.xyz/fetch/details/studio?id=' + gameData.data.studioid,
+                        'https://api.playvoid.xyz/fetch/details/studio?id=' + gameData.data.studioid,
                         { mode: 'cors' }
                     );
                     const studioData = await studioResponse.json();

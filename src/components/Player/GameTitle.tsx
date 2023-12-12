@@ -1,4 +1,4 @@
-import { Autocomplete, Group, Burger, rem, ActionIcon } from '@mantine/core';
+import { Autocomplete, Group, Burger, rem, ActionIcon, Avatar } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSearch, IconHeart } from '@tabler/icons-react';
 import classes from './HeaderSearch.module.css';
@@ -10,6 +10,7 @@ export function GameHeader(data: any) {
         <header className={classes.header}>
             <div className={classes.inner}>
                 <Group>
+                    <Avatar variant="filled" radius="sm" src={'https://cdn.playvoid.xyz/data/gameContent/' + data.data.game.id.slice(4) + '/images/PrimaryIcon.png'} />
                     <h2>{data.data.game.name}</h2>
                     <ActionIcon variant="default" aria-label="Settings">
                         <IconHeart className={classes.like} style={{ width: '70%', height: '70%' }} stroke={1.5} />
