@@ -24,3 +24,13 @@
 .container {
   max-width: 90%;
 }
+
+.longtext {
+  height: 65px;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}

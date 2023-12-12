@@ -1,5 +1,5 @@
 import { IconHeart } from '@tabler/icons-react';
-import { Card, Image, Text, Title, Group, Stack, Badge, Button, ActionIcon, Avatar, Modal, UnstyledButton, Skeleton, CopyButton, Tooltip, rem } from '@mantine/core';
+import { Card, Image, Text, Title, Group, Stack, Badge, Button, ActionIcon, Avatar, Modal, UnstyledButton, Skeleton, CopyButton, Tooltip, rem, Popover } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronRight, IconCopy, IconCheck, IconShare2 } from '@tabler/icons-react';
 import classes from './BadgeCard.module.css';
@@ -27,6 +27,7 @@ function createBadgeList(tags: any) {
 export function GameCard(data: any) {
     const [imageLoading, setImageLoading] = useState(true);
     const [opened, { open, close }] = useDisclosure(false);
+    const [descpopopened, { open: descpopopen, close: descpopclose, toggle: descpoptoggle }] = useDisclosure(false);
 
     function navigateTo(url: string) {
         window.location.href = url;
@@ -100,9 +101,18 @@ export function GameCard(data: any) {
                     <Text mt="md" className={classes.label} c="dimmed">
                         About This Game
                     </Text>
-                    <Text fz="sm" mt="xs">
-                        {data.data.game.description}
-                    </Text>
+                    <Popover width={200} position="bottom" shadow="md" opened={descpopopened} onOpen={descpopopen} onClose={descpopclose}>
+                        <Popover.Target>
+                            <UnstyledButton onMouseEnter={descpopopen} onMouseLeave={descpopclose} >
+                                <Text fz="sm" mt="xs" className={classes.description}>
+                                    {data.data.game.description}
+                                </Text>
+                            </UnstyledButton>
+                        </Popover.Target>
+                        <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                            <Text size="sm">Click for more</Text>
+                        </Popover.Dropdown>
+                    </Popover>
                 </Card.Section>
 
                 <Card.Section className={classes.section}>

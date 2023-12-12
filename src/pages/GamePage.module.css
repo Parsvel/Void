@@ -7,10 +7,17 @@
 }
 
 .left_side {
-    margin: 1.5rem;
-    height: 100%;
+    padding: 1.5rem;
+    height: calc(100vh - 60px);
     width: 25%;
     margin-right: 1rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.left_side::-webkit-scrollbar {
+    display: none;
 }
 
 .right_side {
