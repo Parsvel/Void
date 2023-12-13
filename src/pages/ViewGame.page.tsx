@@ -7,6 +7,7 @@ import { Group, Card, Image, Text } from '@mantine/core';
 import { GameCard } from '../components/Cards/GameViewCard';
 import { GameCardSkeleton } from '../components/Skeletons/GameCard';
 import { BannerCard } from '../components/Cards/GameViewBannerCard';
+import { ViewContent, ViewHeader } from '../components/GamePage/ViewPageContent';
 
 export function ViewGamePage() {
     const [allData, setAllData] = useState({ game: null, studio: null });
@@ -46,12 +47,14 @@ export function ViewGamePage() {
             <div className={classes.main}>
                 <Header />
                 <GeneralAffix />
-                <Group>
-                    <div style={{ margin: '1.5rem', width: '25%' }}>
+                <div className={classes.group}>
+                    <div className={classes.left_side}>
                         <GameCardSkeleton />
                     </div>
-                </Group>
-                <Footer />
+                    <div className={classes.right_side}>
+                        <GameCardSkeleton />
+                    </div>
+                </div>
             </div>
         );
     }
@@ -62,11 +65,14 @@ export function ViewGamePage() {
             <GeneralAffix />
             <div className={classes.group}>
                 <div className={classes.left_side}>
-                    <BannerCard data={allData} />
-                    <GameCard data={allData} />
+                    <div className={classes.left_side_content}>
+                        <BannerCard data={allData} />
+                        <GameCard data={allData} />
+                    </div>
+                    
                 </div>
                 <div className={classes.right_side}>
-                    
+                    <ViewContent data={allData} />
                 </div>
             </div>
         </div>

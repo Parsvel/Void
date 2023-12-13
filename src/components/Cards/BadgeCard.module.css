@@ -36,11 +36,3 @@
         background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
     }
 }
-
-.description {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-}

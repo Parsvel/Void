@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { nprogress, NavigationProgress } from '@mantine/nprogress';
 import '@mantine/nprogress/styles.css';
+import '@mantine/carousel/styles.css';
 
 const myColor: MantineColorsTuple = [
   '#ffeee4',

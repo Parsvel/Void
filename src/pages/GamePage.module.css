@@ -1,30 +1,45 @@
 .main {
     padding-top: 60px;
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
 }
 
 .group {
     display: flex;
+
+    @media (max-width: $mantine-breakpoint-md) {
+        display: block;
+    }
 }
 
 .left_side {
     padding: 1.5rem;
     height: calc(100vh - 60px);
-    width: 25%;
-    margin-right: 1rem;
+    width: 28%;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+
+    @media (max-width: $mantine-breakpoint-md) {
+        width: 100%;
+    }
 }
 
 .left_side::-webkit-scrollbar {
     display: none;
 }
 
+.left_side_content {
+    margin-left: auto;
+    margin-right: auto
+}
+
 .right_side {
     height: calc(100vh - 60px);
     padding: 1.5rem;
     position: relative;
-    width: 75%;
-    margin-left: 1rem;
-    overflow-y: scroll;
+    width: 73%;
+
+    @media (max-width: $mantine-breakpoint-md) {
+        width: 100%;
+    }
 }

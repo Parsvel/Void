@@ -175,14 +175,14 @@ export function Header() {
                         </a>
                     </Group>
 
-                    <Group visibleFrom="sm">
+                    <Group visibleFrom="md">
                         <SpotlightStarterButton />
                         <Button variant="default" onClick={() => navigateTo('/login')}>Log in</Button>
                         <Button onClick={() => navigateTo('/login?ref=register')}>Sign up</Button>
                         <GlobalDrawer />
                     </Group>
 
-                    <Group hiddenFrom="sm">
+                    <Group hiddenFrom="md">
                         <GlobalDrawer />
                         <Burger opened={drawerOpened} onClick={toggleDrawer} />
                     </Group>

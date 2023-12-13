@@ -5,9 +5,6 @@ export function BannerCard(data: any) {
         <Card
             shadow="sm"
             padding="xl"
-            component="a"
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            target="_blank"
             mb="md"
         >
             <Card.Section>
