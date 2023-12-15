@@ -4,6 +4,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronRight, IconCopy, IconCheck, IconShare2 } from '@tabler/icons-react';
 import classes from './BadgeCard.module.css';
 import { useState } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 const badgeList = [
     { id: 'flash', emoji: '🎮', label: 'Flash' },
@@ -27,6 +28,16 @@ function createBadgeList(tags: any) {
 export function GameCard(data: any) {
     const [imageLoading, setImageLoading] = useState(true);
     const [opened, { open, close }] = useDisclosure(false);
+    const [popoverOpened, setPopoverOpened] = useState(false);
+
+    const handleTouchStart = () => {
+        setPopoverOpened(true);
+    };
+
+    const handlePopoverClose = () => {
+        setPopoverOpened(false);
+    };
+
 
     function navigateTo(url: string) {
         window.location.href = url;
@@ -116,9 +127,25 @@ export function GameCard(data: any) {
                 </Card.Section>
 
                 <Group mt="xs">
-                    <Button radius="md" style={{ flex: 1 }} onClick={() => navigateTo('/game/play/' + data.data.game.primename)}>
-                        Play
-                    </Button>
+                    <BrowserView style={{ flex: 1, width: '100%' }}>
+                        <Button radius="md" style={{ width: '100%' }} onClick={() => navigateTo('/game/play/' + data.data.game.primename)}>
+                            Play
+                        </Button>
+                    </BrowserView>
+                    <MobileView style={{ flex: 1, width: '100%' }}>
+                        <Popover width={200} opened={popoverOpened} onClose={handlePopoverClose} position="bottom" shadow="md">
+                            <Popover.Target>
+                                <div onMouseDown={handleTouchStart}>
+                                    <Button radius="md" style={{ width: '100%' }} onClick={() => navigateTo('/game/play/' + data.data.game.primename)} className={classes.disabled} disabled>
+                                        Play
+                                    </Button>
+                                </div>
+                            </Popover.Target>
+                            <Popover.Dropdown>
+                                <Text size="xs">You cannot play games on mobile yet :(</Text>
+                            </Popover.Dropdown>
+                        </Popover>
+                    </MobileView>
                     <ActionIcon variant="default" radius="md" size={36}>
                         <IconHeart className={classes.like} stroke={1.5} />
                     </ActionIcon>

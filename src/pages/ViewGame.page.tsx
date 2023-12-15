@@ -7,7 +7,7 @@ import { Group, Card, Image, Text } from '@mantine/core';
 import { GameCard } from '../components/Cards/GameViewCard';
 import { GameCardSkeleton } from '../components/Skeletons/GameCard';
 import { BannerCard } from '../components/Cards/GameViewBannerCard';
-import { ViewContent, ViewHeader } from '../components/GamePage/ViewPageContent';
+import { ViewContent} from '../components/GamePage/ViewPageContent';
 
 export function ViewGamePage() {
     const [allData, setAllData] = useState({ game: null, studio: null });

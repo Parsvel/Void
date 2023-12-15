@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { SimpleGrid, Skeleton, Container, Avatar } from '@mantine/core';
 import { Card, Image, Text, Group, Badge, Button } from '@mantine/core';
 import { IconHeart } from '@tabler/icons-react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import classes from './BadgeCard.module.css';
 
 const badgeList = [
@@ -50,7 +51,7 @@ export function GamesGrid() {
 
     return (
         <Container className={classes.container} mt="md">
-            <SimpleGrid cols={3}>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }}>
                 {gamesList.map((game: any, index: number) => (
                     <Card withBorder radius="md" p="md" className={classes.card} key={game.id}>
                         <Card.Section>
@@ -89,13 +90,15 @@ export function GamesGrid() {
                         </Card.Section>
 
                         <Group mt="xs">
-                            <Button
-                                radius="md"
-                                style={{ flex: 1 }}
-                                onClick={() => navigateTo(`/game/play/${game.primename}`)}
-                            >
-                                Play Now
-                            </Button>
+                            <BrowserView>
+                                <Button
+                                    radius="md"
+                                    style={{ flex: 1 }}
+                                    onClick={() => navigateTo(`/game/play/${game.primename}`)}
+                                >
+                                    Play Now
+                                </Button>
+                            </BrowserView>
                             <Button
                                 radius="md"
                                 variant="default"
